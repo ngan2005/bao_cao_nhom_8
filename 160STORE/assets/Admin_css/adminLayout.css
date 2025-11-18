@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    background: #f3f4f6;
+    height: 100vh;
+}
+
+/* ==============================
+      SIDEBAR
+ ==============================*/
+.sidebar {
+    width: 250px;
+    background: #1f2937;
+    color: #fff;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 8px;
+}
+
+.sidebar .logo h2 a {
+    text-decoration: none;
+    color: #3b82f6;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-info {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.admin-avatar {
+    width: 60px;
+    height: 60px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: auto;
+}
+
+.admin-info h3 {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.admin-info p {
+    font-size: 13px;
+    color: #d1d5db;
+}
+
+/* NAV */
+.nav-menu {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.nav-menu li {
+    list-style: none;
+    margin-bottom: 6px;
+}
+
+.nav-menu li.active {
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-menu a:hover {
+    background: #3b82f6;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+/* ==============================
+      MAIN AREA
+ ==============================*/
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 25px;
+    font-size: 20px;
+    font-weight: 600;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logout {
+    background: #ef4444;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout:hover {
+    background: #dc2626;
+}
+
+.page-area {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+/* TABLE DEFAULT */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+}
+
+th, td {
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+}
+
+th {
+    background: #f8f8f8;
+    font-weight: 600;
+}

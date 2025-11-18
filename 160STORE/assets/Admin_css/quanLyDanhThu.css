@@ -1,0 +1,158 @@
+/* --- Trang Quản lý Doanh thu --- */
+
+.revenue-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Khoảng cách giữa các khối */
+}
+
+/* --- Khối Lọc (Filter) --- */
+.filter-bar {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-bar form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end; /* Căn các item xuống dưới */
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.filter-group .form-control {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.filter-group .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color, #4361ee);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--primary-color, #4361ee);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-submit:hover {
+    background-color: var(--secondary-color, #3f37c9);
+}
+
+/* --- Khối Thống kê Nhanh (Stats Grid) --- */
+.stats-grid {
+    display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-left: 5px solid; /* Thêm viền màu */
+}
+
+.stat-card .icon-wrapper {
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-card .stat-info .stat-label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.stat-card .stat-info .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/* Card 1: Tổng doanh thu (Xanh dương) */
+.stat-card.total-revenue { 
+    border-color: #4361ee; 
+}
+.stat-card.total-revenue .icon-wrapper { 
+    background-color: #eef2ff; 
+    color: #4361ee; 
+}
+
+/* Card 2: Trung bình (Xanh lá) */
+.stat-card.average-revenue { 
+    border-color: #16a34a; 
+}
+.stat-card.average-revenue .icon-wrapper { 
+    background-color: #f0fdf4; 
+    color: #16a34a; 
+}
+
+/* Card 3: Cao nhất (Cam) */
+.stat-card.max-revenue { 
+    border-color: #f97316; 
+}
+.stat-card.max-revenue .icon-wrapper { 
+    background-color: #fff7ed; 
+    color: #f97316; 
+}
+
+/* --- Khối Biểu đồ (Chart) --- */
+.chart-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+/* Canvas styling */
+#doanhThuChart {
+    width: 100% !important;
+    height: 350px !important; /* Set chiều cao cố định */
+}

@@ -1,0 +1,213 @@
+/* --- Layout & Header --- */
+.container {
+    padding-bottom: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 24px;
+    background: #4361ee;
+    border-radius: 2px;
+}
+
+/* --- Thông báo (Messages) --- */
+.msg {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.msg.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #22c55e;
+}
+
+.msg.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+/* --- Thanh Tìm kiếm (Search Bar) --- */
+.search-bar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.btn-search, .btn-refresh {
+    padding: 0 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-search {
+    background-color: #4361ee;
+    color: #fff;
+}
+.btn-search:hover { background-color: #3f37c9; }
+
+.btn-refresh {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+.btn-refresh:hover { background-color: #e2e8f0; color: #334155; }
+
+/* --- Bảng Danh sách (Table) --- */
+.table-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Cho phép cuộn ngang trên mobile */
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px; /* Đảm bảo bảng không bị co quá nhỏ */
+}
+
+thead th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 16px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Style cho các cột đặc biệt */
+tbody td:first-child { /* Cột ID */
+    font-weight: bold;
+    color: #64748b;
+    font-family: monospace;
+}
+
+tbody td:nth-child(2) { /* Cột Tên đăng nhập */
+    font-weight: 600;
+    color: #4361ee;
+}
+
+/* Dropdown Vai trò */
+.role-select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background-color: #fff;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.role-select:focus {
+    border-color: #4361ee;
+}
+
+.role-select option {
+    color: #1e293b;
+    padding: 5px;
+}
+
+/* Nút Xóa */
+.btn-danger {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    .btn-search, .btn-refresh {
+        padding: 12px;
+        justify-content: center;
+    }
+}

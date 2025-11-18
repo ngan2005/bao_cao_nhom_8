@@ -1,0 +1,48 @@
+/* Container của Breadcrumb */
+.breadcrumb-container {
+    margin-bottom: 5px;
+}
+
+/* Danh sách UL */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 13px;
+}
+
+/* Từng mục li */
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: #64748b; /* Màu xám nhẹ */
+}
+
+/* Icon Home */
+.breadcrumb-item i {
+    margin-right: 5px;
+}
+
+/* Dấu gạch chéo ngăn cách (/) */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #cbd5e1; /* Màu gạch chéo nhạt hơn */
+}
+
+/* Mục đang Active (trang hiện tại) */
+.breadcrumb-item.active {
+    color: #4361ee; /* Màu xanh chủ đạo */
+    font-weight: 600;
+    pointer-events: none; /* Không click được trang hiện tại */
+}
+
+/* Hiệu ứng hover cho các mục không active (nếu sau này bạn thêm thẻ a vào li đầu) */
+.breadcrumb-item:not(.active):hover {
+    color: #333;
+    cursor: pointer;
+}

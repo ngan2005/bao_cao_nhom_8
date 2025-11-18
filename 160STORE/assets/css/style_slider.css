@@ -1,0 +1,89 @@
+/* ================= SLIDER ================= */
+.slider {
+  position: relative;
+  width: 1150px;
+  height: 450px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.8s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= NÚT CHUYỂN SLIDE ================= */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  user-select: none;
+  opacity: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider:hover .prev,
+.slider:hover .next {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* ================= BANNER ================= */
+.banner {
+  width: 1150px;
+  margin: 30px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.banner:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.banner:hover img {
+  transform: scale(1.05);
+}
+.center-img {
+  display: block;       /* biến ảnh thành phần block để margin auto hoạt động */
+  margin: 20px auto;    /* canh giữa ngang và tạo khoảng cách trên dưới */
+}

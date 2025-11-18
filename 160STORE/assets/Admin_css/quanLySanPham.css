@@ -1,0 +1,288 @@
+/* --- Layout chung --- */
+.container {
+    background-color: transparent; /* Nền trong suốt vì đã có nền body */
+    padding: 0 0 30px 0;
+}
+
+h2 {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 i { color: var(--primary-color, #4361ee); }
+
+/* --- Thông báo (Messages) --- */
+.msg {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideDown 0.4s ease-out;
+}
+.msg.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.msg.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+.msg ul { margin: 0; padding-left: 20px; }
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Thanh Tìm kiếm --- */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.search-input:focus { border-color: #4361ee; }
+
+.btn-search, .btn-refresh {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-search {
+    background-color: #4361ee;
+    color: white;
+}
+.btn-search:hover { background-color: #3f37c9; }
+
+.btn-refresh {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+.btn-refresh:hover { background-color: #e2e8f0; color: #334155; }
+
+/* --- Form Card (Thêm/Sửa) --- */
+.form-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border-top: 4px solid #4361ee;
+}
+
+.form-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e293b;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Grid Layout cho Form */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột */
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Các ô full chiều rộng (Mô tả, Hình ảnh) */
+.form-group.full {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+.form-group label i { color: #4361ee; width: 16px; }
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #4361ee;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+/* Input file styling */
+input[type="file"] {
+    padding: 8px;
+    background: #f8fafc;
+}
+
+/* Nút bấm Form */
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #4361ee;
+    color: white;
+}
+.btn-primary:hover { background-color: #3f37c9; transform: translateY(-1px); }
+
+.btn-cancel {
+    background-color: #94a3b8;
+    color: white;
+}
+.btn-cancel:hover { background-color: #64748b; }
+
+/* --- Bảng Danh Sách Sản Phẩm --- */
+.table-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Ảnh thumbnail */
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Nút thao tác trong bảng */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    background-color: #e0e7ff;
+    color: #4361ee;
+}
+.btn-edit:hover { background-color: #4361ee; color: white; }
+
+.btn-delete {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+.btn-delete:hover { background-color: #ef4444; color: white; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+    }
+    .form-group.full {
+        grid-column: span 1;
+    }
+    .search-bar {
+        flex-direction: column;
+    }
+    .btn-search, .btn-refresh {
+        width: 100%;
+        justify-content: center;
+    }
+}
