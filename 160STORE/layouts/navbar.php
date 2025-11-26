@@ -1,14 +1,13 @@
 <?php
 $currentPage = $_GET['page'] ?? 'TrangChu';
 
-$breadcrumb_map = [
-    'TrangChu' => ['Hàng Mới'],
-    'danhSachCombo' => ['Sản Phẩm', 'Combo'],
-    'danhSachAoNam' => ['Áo Nam'],
-    'danhSachQuanNam' => ['Quần Nam'],
-    'danhSachPhuKien' => ['Sản Phẩm', 'Phụ Kiện'],
-];
-
+// $breadcrumb_map = [
+//     'TrangChu' => ['Hàng Mới'],
+//     'danhSachCombo' => ['Sản Phẩm', 'Combo'],
+//     'danhSachAoNam' => ['Áo Nam'],
+//     'danhSachQuanNam' => ['Quần Nam'],
+//     'danhSachPhuKien' => ['Sản Phẩm', 'Phụ Kiện'],
+// ];
 // Lấy breadcrumb hiện tại
 $currentBreadcrumb = $breadcrumb_map[$currentPage] ?? [];
 ?>

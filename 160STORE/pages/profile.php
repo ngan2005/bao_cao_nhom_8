@@ -168,4 +168,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <a href="index.php?page=TrangChu" class="btn btn-secondary mt-3">Quay lại trang chủ</a>
+    <?php if (!empty($user['vai_Tro']) && $user['vai_Tro'] === 'admin'): ?>
+        <a href="admin.php" class="btn btn-warning mt-3">Đi tới trang quản trị Admin</a>
+    <?php endif; ?>
 </div>

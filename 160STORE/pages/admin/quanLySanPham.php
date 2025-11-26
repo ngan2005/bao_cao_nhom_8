@@ -21,11 +21,6 @@ $editing = false;
 $product = [];
 $variants = [];
 
-// Tạo thư mục uploads
-$uploadDir = __DIR__ . '/uploads/';
-if (!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
-}
 
 // Lấy danh sách hỗ trợ
 try {
@@ -367,7 +362,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="form-group full">
                     <label><i class="fas fa-image"></i> Hình ảnh sản phẩm</label>
-                    <input type="file" name="file_hinh" accept="image/*">
                     <input type="text" name="link_hinh" placeholder="Hoặc nhập link ảnh..." 
                             value="<?= htmlspecialchars($product['hinh_Anh'] ?? '') ?>" style="margin-top:10px;">
                     <?php if ($editing && !empty($product['hinh_Anh'])): ?>
